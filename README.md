@@ -88,6 +88,8 @@ jq . snyk-log/group-$SNYK_GROUP_ID-github-enterprise-orgs.json
 ```
 
 Use the file created from the previous step to create like-for-like Snyk orgs:
+
+[IMPORTANT NOTE] Ensure that all notifications and PR automation are turned off in your Snyk template org before running this next command!
 ```bash
 DEBUG=snyk* snyk-api-import orgs:create --noDuplicateNames --file=snyk-log/group-$SNYK_GROUP_ID-github-enterprise-orgs.json
 ```
